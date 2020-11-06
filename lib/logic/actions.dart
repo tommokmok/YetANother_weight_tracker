@@ -1,20 +1,20 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:weight_tracker/model/weight_entry.dart';
 
 class UserLoadedAction {
-  final FirebaseUser firebaseUser;
-  final List<WeightEntry> cachedEntries;
+  // final FirebaseUser firebaseUser;
+  // final List<WeightEntry> cachedEntries;
 
-  UserLoadedAction(this.firebaseUser, {this.cachedEntries = const []});
+  // UserLoadedAction(this.firebaseUser, {this.cachedEntries = const []});
 }
 
 class AddDatabaseReferenceAction {
-  final DatabaseReference databaseReference;
-  final List<WeightEntry> cachedEntries;
+  // final DatabaseReference databaseReference;
+  // final List<WeightEntry> cachedEntries;
 
-  AddDatabaseReferenceAction(this.databaseReference,
-      {this.cachedEntries = const []});
+  // AddDatabaseReferenceAction(this.databaseReference,
+  //     {this.cachedEntries = const []});
 }
 
 class GetSavedWeightNote {}
@@ -46,21 +46,21 @@ class RemoveEntryAction {
 }
 
 class OnAddedAction {
-  final Event event;
+  // final Event event;
 
-  OnAddedAction(this.event);
+  // OnAddedAction(this.event);
 }
 
 class OnChangedAction {
-  final Event event;
+  // final Event event;
 
-  OnChangedAction(this.event);
+  // OnChangedAction(this.event);
 }
 
 class OnRemovedAction {
-  final Event event;
+  // final Event event;
 
-  OnRemovedAction(this.event);
+  // OnRemovedAction(this.event);
 }
 
 class AcceptEntryAddedAction {}

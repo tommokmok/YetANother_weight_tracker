@@ -11,3 +11,4 @@ pubspec.lock
 *.flutter-plugins-dependencies
 .dart_tool/package_config.json
 ios/Flutter/flutter_export_environment.sh
+.dart_tool/

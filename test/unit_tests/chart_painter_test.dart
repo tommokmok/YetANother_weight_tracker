@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:mockito/mockito.dart';
+// ignore: deprecated_member_use
 import 'package:test_api/test_api.dart';
 import 'package:weight_tracker/model/weight_entry.dart';
 import 'package:weight_tracker/widgets/progress_chart.dart';
@@ -44,7 +45,7 @@ void main() {
     WeightEntry weightEntry2 =
         new WeightEntry(now.subtract(const Duration(days: 1)), 70.0, null);
     ChartPainter chartPainter =
-    new ChartPainter([weightEntry1, weightEntry2], 30, true);
+        new ChartPainter([weightEntry1, weightEntry2], 30, true);
     //when
     chartPainter.paint(mockCanvas, size);
     //then

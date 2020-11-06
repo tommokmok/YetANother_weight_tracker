@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:meta/meta.dart';
 import 'package:weight_tracker/model/weight_entry.dart';
 
@@ -9,13 +9,13 @@ class ReduxState {
   final String unit;
   final RemovedEntryState removedEntryState;
   final WeightEntryDialogReduxState weightEntryDialogState;
-  final FirebaseState firebaseState;
+  // final FirebaseState firebaseState;
   final MainPageReduxState mainPageState;
   final DateTime progressChartStartDate;
   final double weightFromNotes;
 
   const ReduxState({
-    this.firebaseState = const FirebaseState(),
+    // this.firebaseState = const FirebaseState(),
     this.entries = const [],
     this.mainPageState = const MainPageReduxState(),
     this.unit = 'kg',
@@ -26,7 +26,7 @@ class ReduxState {
   });
 
   ReduxState copyWith({
-    FirebaseState firebaseState,
+    // FirebaseState firebaseState,
     List<WeightEntry> entries,
     bool hasEntryBeenAdded,
     String unit,
@@ -35,14 +35,15 @@ class ReduxState {
     DateTime progressChartStartDate,
   }) {
     return new ReduxState(
-        firebaseState: firebaseState ?? this.firebaseState,
+        // firebaseState: firebaseState ?? this.firebaseState,
         entries: entries ?? this.entries,
         mainPageState: mainPageState ?? this.mainPageState,
         unit: unit ?? this.unit,
         weightEntryDialogState:
-        weightEntryDialogState ?? this.weightEntryDialogState,
+            weightEntryDialogState ?? this.weightEntryDialogState,
         removedEntryState: removedEntryState ?? this.removedEntryState,
-        progressChartStartDate: progressChartStartDate ?? this.progressChartStartDate);
+        progressChartStartDate:
+            progressChartStartDate ?? this.progressChartStartDate);
   }
 }
 
@@ -82,21 +83,21 @@ class WeightEntryDialogReduxState {
 }
 
 @immutable
-class FirebaseState {
-  final FirebaseUser firebaseUser;
-  final DatabaseReference mainReference;
+// class FirebaseState {
+//   final FirebaseUser firebaseUser;
+//   final DatabaseReference mainReference;
 
-  const FirebaseState({this.firebaseUser, this.mainReference});
+//   const FirebaseState({this.firebaseUser, this.mainReference});
 
-  FirebaseState copyWith({
-    FirebaseUser firebaseUser,
-    DatabaseReference mainReference,
-  }) {
-    return new FirebaseState(
-        firebaseUser: firebaseUser ?? this.firebaseUser,
-        mainReference: mainReference ?? this.mainReference);
-  }
-}
+//   FirebaseState copyWith({
+//     FirebaseUser firebaseUser,
+//     DatabaseReference mainReference,
+//   }) {
+//     return new FirebaseState(
+//         firebaseUser: firebaseUser ?? this.firebaseUser,
+//         mainReference: mainReference ?? this.mainReference);
+//   }
+// }
 
 @immutable
 class MainPageReduxState {

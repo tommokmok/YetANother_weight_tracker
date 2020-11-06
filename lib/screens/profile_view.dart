@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:weight_tracker/logic/actions.dart';
@@ -10,14 +10,14 @@ class ProfileView extends StatelessWidget {
     return new StoreConnector<ReduxState, _ViewModel>(
       converter: (store) {
         return new _ViewModel(
-          user: store.state.firebaseState.firebaseUser,
+          // user: store.state.firebaseState.firebaseUser,
           login: () => store
               .dispatch(LoginWithGoogle(cachedEntries: store.state.entries)),
           logout: () => store.dispatch(LogoutAction()),
         );
       },
       builder: (BuildContext context, _ViewModel vm) {
-        return (vm.user?.isAnonymous ?? true)
+        return (true)
             ? _anonymousView(context, vm)
             : _loggedInView(context, vm);
       },
@@ -27,9 +27,9 @@ class ProfileView extends StatelessWidget {
   Widget _loggedInView(BuildContext context, _ViewModel vm) {
     return Column(
       children: <Widget>[
-        _drawAvatar(NetworkImage(vm.user.photoUrl)),
-        _drawLabel(context, vm.user.displayName),
-        Text(vm.user.email),
+        // _drawAvatar(NetworkImage(vm.user.photoUrl)),
+        // _drawLabel(context, vm.user.displayName),
+        // Text(vm.user.email),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Container(
@@ -78,7 +78,7 @@ class ProfileView extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: Text(
         label,
-        style: Theme.of(context).textTheme.display1,
+        style: Theme.of(context).textTheme.headline4,
       ),
     );
   }
@@ -96,12 +96,12 @@ class ProfileView extends StatelessWidget {
 }
 
 class _ViewModel {
-  final FirebaseUser user;
+  // final FirebaseUser user;
   final Function() login;
   final Function() logout;
 
   _ViewModel({
-    @required this.user,
+    // @required this.user,
     @required this.login,
     @required this.logout,
   });

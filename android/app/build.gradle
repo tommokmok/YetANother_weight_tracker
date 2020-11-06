@@ -24,20 +24,20 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     lintOptions {
         disable 'InvalidPackage'
     }
 
     defaultConfig {
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 10
         versionName "1.5.3"
 
-        applicationId "com.mszalek.weight_tracker"
+        applicationId "com.tomokmok.weight_tracker"
     }
 
     if (keystorePropertiesFile.exists()) {
@@ -69,7 +69,7 @@ flutter {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }
 apply plugin: 'com.google.gms.google-services'

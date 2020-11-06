@@ -1,4 +1,4 @@
-import 'package:firebase_database/firebase_database.dart';
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:quiver/core.dart';
 
 class WeightEntry {
@@ -9,16 +9,16 @@ class WeightEntry {
 
   WeightEntry(this.dateTime, this.weight, this.note);
 
-  WeightEntry.fromSnapshot(DataSnapshot snapshot)
-      : key = snapshot.key,
-        dateTime =
-        new DateTime.fromMillisecondsSinceEpoch(snapshot.value["date"]),
-        weight = snapshot.value["weight"].toDouble(),
-        note = snapshot.value["note"];
+  // WeightEntry.fromSnapshot(DataSnapshot snapshot)
+  //     : key = snapshot.key,
+  //       dateTime =
+  //       new DateTime.fromMillisecondsSinceEpoch(snapshot.value["date"]),
+  //       weight = snapshot.value["weight"].toDouble(),
+  //       note = snapshot.value["note"];
 
   WeightEntry.copy(WeightEntry weightEntry)
       : key = weightEntry.key,
-  //copy datetime
+        //copy datetime
         dateTime = new DateTime.fromMillisecondsSinceEpoch(
             weightEntry.dateTime.millisecondsSinceEpoch),
         weight = weightEntry.weight,
@@ -50,9 +50,9 @@ class WeightEntry {
   @override
   bool operator ==(other) =>
       other is WeightEntry &&
-          key == other.key &&
-          dateTime.millisecondsSinceEpoch == other.dateTime
-              .millisecondsSinceEpoch &&
-          weight == other.weight &&
-          note == other.note;
+      key == other.key &&
+      dateTime.millisecondsSinceEpoch ==
+          other.dateTime.millisecondsSinceEpoch &&
+      weight == other.weight &&
+      note == other.note;
 }
