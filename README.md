@@ -1,14 +1,18 @@
 # YetAnother WeightTracker  
 
-Base on the original version, with some my own modifications.
+Base on the original version (https://github.com/MSzalek-Mobile/weight_tracker), with some my own modifications.
 
 ## Todo
 
-1. Remove the FireBase.
+1. Remove the FireBase and google complonets.
+2. Need to implement another layer for data storage.
+
+## Issue
+1. Save the data is not work.
 
 ## Getting started
 
-To build the app you need to create your own Firebase application according to guidlines on [Firebase codelab](https://codelabs.developers.google.com/codelabs/flutter-firebase/#4).For android you need to provide own `google-services.json` file. It is explained in [codelab](https://codelabs.developers.google.com/codelabs/flutter-firebase/#4) and [here](https://firebase.google.com/docs/android/setup?authuser=0).
+Open the project with VS code.
 
 ## Contributing
 
